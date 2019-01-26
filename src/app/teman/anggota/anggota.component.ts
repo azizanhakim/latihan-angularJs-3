@@ -13,6 +13,12 @@ import { AnggotaService } from './anggota.service';
 })
 export class AnggotaComponent implements OnInit {
 
+  idx: string;
+
+  kirimId(id){
+    this.idx = id;
+  }
+
   constructor(private anggotaService: AnggotaService, private route: ActivatedRoute) {
     
     

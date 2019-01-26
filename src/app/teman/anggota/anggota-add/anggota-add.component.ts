@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '../../../../../node_modules/@angular/forms';
 import { AnggotaModel } from '../anggota.model';
 import { AnggotaService } from '../anggota.service';
@@ -12,8 +12,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./anggota-add.component.css'],
   providers: [AnggotaService]
 })
-export class AnggotaAddComponent implements OnInit {
+export class AnggotaAddComponent implements OnInit, OnChanges{
 
+  @Input() terimaId: string;
   anggotaForm: FormGroup;
   private idx: string;
   private sub: Subscription;
@@ -30,6 +31,9 @@ export class AnggotaAddComponent implements OnInit {
     });
   }
 
+  ngOnChanges(){
+    this.ngOnInit();
+  }
   ngOnInit() {
     if(this.idx) {
       this.anggotaService.getAnggota(this.idx).subscribe(data => {

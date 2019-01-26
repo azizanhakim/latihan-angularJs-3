@@ -1,3 +1,3 @@
-<app-anggota-add></app-anggota-add>
+<app-anggota-add [terimaId]="idx" ></app-anggota-add>
 <br/>
-<app-anggota-list></app-anggota-list>
+<app-anggota-list (idAnggota)="kirimId($event)"></app-anggota-list>
