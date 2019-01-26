@@ -6,16 +6,19 @@
       <a class="nav-link" routerLink="/home" > Home </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" routerLink="/teman" > Teman </a>
+      <a class="nav-link" routerLink="/teman" > Teman </a>
     </li>
     <li class="nav-item">
-          <a class="nav-link" routerLink="/contact-us" > Contact us </a>
+      <a class="nav-link" routerLink="/contact-us" > Contact us </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="authService.loggedIn">
       <a class="nav-link" routerLink="/anggota" > Anggota </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="authService.loggedIn">
       <a class="nav-link" routerLink="/penerbit" > Penerbit </a>
+    </li>
+    <li class="nav-item" *ngIf="authService.loggedIn">
+      <a class="nav-link" (click)="onLogout()" > Logout </a>
     </li>
   </ul>
   </nav>

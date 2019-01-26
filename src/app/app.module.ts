@@ -18,6 +18,7 @@ import { PenerbitComponent } from './teman/penerbit/penerbit.component';
 import { PenerbitListComponent } from './teman/penerbit/penerbit-list/penerbit-list.component';
 import { PenerbitAddComponent } from './teman/penerbit/penerbit-add/penerbit-add.component';
 import { AnggotaAddComponent } from './teman/anggota/anggota-add/anggota-add.component';
+import { AuthService } from './teman/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { AnggotaAddComponent } from './teman/anggota/anggota-add/anggota-add.com
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

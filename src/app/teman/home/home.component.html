@@ -1,3 +1,28 @@
-<h1>
-    HOME WORKS, BOSSKUU!
-</h1>>
+<p>&nbsp;</p>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- Username -->
+        <div class="form-group row">
+          <label for="password" class="col-sm-3 form-control-label"> Username </label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="username"
+              #username>
+          </div>
+        </div>
+  
+        <!-- Password -->
+        <div class="form-group row">
+          <label for="password" class="col-sm-3 form-control-label"> Password</label>
+          <div class="col-sm-9">
+            <!-- #inputEMail itu id di pasang di teman-add.component.ts -->
+            <input type="text" class="form-control" id="password"
+              #password>
+          </div>
+        </div>
+  
+        <button type="Add" class="btn btn-success" (click)="onLogin(username, password)"> Login </button>
+      </div>
+    </div>
+  </div>
+  

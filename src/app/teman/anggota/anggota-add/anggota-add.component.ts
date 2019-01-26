@@ -48,7 +48,7 @@ export class AnggotaAddComponent implements OnInit, OnChanges{
 
   kirim(){
     const anggotaModel = new AnggotaModel();
-
+    anggotaModel.id = this.idx;
     anggotaModel.nama = this.anggotaForm.get('nama').value;
     anggotaModel.nomorKtp = this.anggotaForm.get('nomorKtp').value;
     anggotaModel.alamat = this.anggotaForm.get('alamat').value;
@@ -58,7 +58,10 @@ export class AnggotaAddComponent implements OnInit, OnChanges{
         alert(data.nama + ' berhasil disimpan, dengan id ' + data.id)
       });
     } else {
-      console.log('service update letakkan di sini');
+      this.anggotaService.simpanKontak(anggotaModel).subscribe(data => {
+        alert(data.nama + ' berhasil disimpan, dengan id ' + data.id)
+      });
+      console.log('untuk update');
     }
     console.log(anggotaModel);
 
